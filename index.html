@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=900, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Pesquisa — Gestão Ambiental e Sustentabilidade na Engenharia de Produção</title>
     <style>
@@ -911,40 +911,55 @@
             color: var(--muted)
         }
         
-        @media (max-width:640px) {
+        @media (max-width: 640px) {
             body {
-                font-size: 15px
+                font-size: 15px;
+            }
+            main {
+                padding: 16px 8px 110px;
+                /* menos padding nas laterais */
             }
             .card {
-                padding: 22px 18px
+                padding: 20px 14px;
+                /* card mais largo */
+                border-radius: 12px;
             }
             h2 {
-                font-size: 20px
+                font-size: 20px;
             }
             .brand small {
-                display: none
+                display: none;
             }
             .step-dot em {
-                display: none
+                display: none;
             }
             .step-dot {
-                padding: 4px 6px
+                padding: 4px 6px;
             }
             .resumo-item {
                 grid-template-columns: 1fr;
-                gap: 2px
+                gap: 2px;
             }
             .resumo-item dd {
-                text-align: left
+                text-align: left;
             }
             .footer-hint {
-                display: none
-            }
-            main {
-                padding-bottom: 120px
+                display: none;
             }
             .search-select-list {
-                max-height: 200px
+                max-height: 200px;
+            }
+            /* Matriz rola horizontalmente DENTRO do card, sem quebrar a página */
+            .matriz {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Likert em 1 coluna já está herdado do mobile, mas ajustamos o gap */
+            .likert {
+                gap: 6px;
+            }
+            .likert-opt {
+                padding: 10px 12px;
             }
         }
     </style>
@@ -1493,8 +1508,8 @@
 
     <script>
         /* ============================================================
-                                                   1. DADOS
-                                                   ============================================================ */
+                                                                   1. DADOS
+                                                                   ============================================================ */
         const ESTADOS = [
             'Acre (AC)', 'Alagoas (AL)', 'Amapá (AP)', 'Amazonas (AM)', 'Bahia (BA)', 'Ceará (CE)',
             'Distrito Federal (DF)', 'Espírito Santo (ES)', 'Goiás (GO)', 'Maranhão (MA)',
